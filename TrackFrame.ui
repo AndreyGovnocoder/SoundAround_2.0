@@ -1,0 +1,1563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TrackFrame</class>
+ <widget class="QWidget" name="TrackFrame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>457</width>
+    <height>114</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>457</width>
+    <height>114</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>457</width>
+    <height>114</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>TrackFrame</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>3</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="track_GBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>300</height>
+      </size>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox {
+   border: 1px solid transparent;
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>5</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="topFrame">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QComboBox" name="tracks_CBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="mouseTracking">
+              <bool>false</bool>
+             </property>
+             <property name="tabletTracking">
+              <bool>false</bool>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::StrongFocus</enum>
+             </property>
+             <property name="contextMenuPolicy">
+              <enum>Qt::NoContextMenu</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox 
+{
+    border: 2px inset #909090;
+	border-color: rgb(0, 128, 0);
+    border-radius: 6px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;
+}
+
+QComboBox:hover
+{
+	border-style: outset;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable
+ {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #e1ffde, stop: 0.4 #c5ffbb,
+                                 stop: 0.5 #a7ffa1, stop: 1.0 #80c37b);
+}
+
+QComboBox:!editable:on, QComboBox::drop-down:editable:on 
+{
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #80c37b, stop: 0.4 #a7ffa1,
+                                stop: 0.5 #c5ffbb, stop: 1.0 #e1ffde);
+}
+
+QComboBox:on 
+{ 
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+QComboBox::drop-down 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 1px;
+    border-left-color: #008000;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow 
+{
+	image: url(:/SoundAround/images/arrow-216-12.png);
+}
+
+QComboBox::down-arrow:on { 
+    top: 1px;
+    left: 1px;
+}</string>
+             </property>
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QComboBox::AdjustToContents</enum>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>8</width>
+               <height>8</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QFrame" name="closeBtn_frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QToolButton" name="close_btn">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Удалить трек из списка воспроизведения&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton 
+{
+     border: 0px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 4px;
+     background-color: rgba(255, 255, 255, 0);
+ }
+
+QToolButton:hover 
+{
+	 border: 1px solid #8f8f91;
+	border-color: rgb(143, 0, 0);
+}
+
+ QToolButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 rgba(218, 219, 222, 50), stop: 1 rgba(246, 247, 250, 50););
+ border: 0px ;
+ }
+
+ QToolButton:flat 
+{
+     border: none; 
+ }
+
+QToolButton:focus
+{
+	
+	border-color: rgb(0, 128, 0);
+}
+
+ QToolButton:default
+ {
+     border-color: navy;
+	
+	background-color: rgba(255, 255, 255, 0);
+ }</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="SoundAround.qrc">
+                <normaloff>:/SoundAround/images/close-window-24.png</normaloff>:/SoundAround/images/close-window-24.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>18</width>
+                <height>18</height>
+               </size>
+              </property>
+              <property name="autoRaise">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Preferred</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QFrame" name="playerControl_frame">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" name="playerControl_HBox">
+             <item>
+              <widget class="QFrame" name="positionSlider_frame">
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_4">
+                  <property name="spacing">
+                   <number>10</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="currTimeLbl">
+                    <property name="minimumSize">
+                     <size>
+                      <width>40</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>40</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Текущая позиция трека&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="text">
+                     <string>0:00:00</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSlider" name="timeLine">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="palette">
+                     <palette>
+                      <active/>
+                      <inactive/>
+                      <disabled/>
+                     </palette>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QSlider::groove:horizontal 
+{
+    border: 0px outset #008000;
+	border-radius: 3px;
+    height: 5px; 
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #63c143, stop:1 #75e550);
+    margin: -1px 0;
+	margin-top: 1.7px 0;
+}
+
+QSlider::handle:horizontal 
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #008000, stop:1 #00b600);
+    border: 1.5px outset #008000;
+    width: 15px;
+    margin: -2px 0;
+    border-radius: 4px;
+}
+</string>
+                    </property>
+                    <property name="tracking">
+                     <bool>true</bool>
+                    </property>
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="totalTimeLbl">
+                    <property name="minimumSize">
+                     <size>
+                      <width>40</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>40</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Продолжительность трека&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="text">
+                     <string>0:00:00</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="horizontal_frame">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>224</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QToolButton" name="stop_btn">
+                  <property name="minimumSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string/>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QToolButton 
+{
+     border: 0px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: rgba(255, 255, 255, 0);
+     min-width: 30px;
+	 min-height: 30px;
+ }
+
+ QToolButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 rgba(218, 219, 222, 50), stop: 1 rgba(246, 247, 250, 50););
+ }
+
+ QToolButton:flat 
+{
+     border: none; 
+ }
+
+QToolButton:hover 
+{
+	 border: 1px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+}
+
+ QToolButton:default
+ {
+     border-color: navy;
+	
+	background-color: rgba(255, 255, 255, 0);
+ }</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="SoundAround.qrc">
+                    <normaloff>:/SoundAround/images/stop-48.png</normaloff>:/SoundAround/images/stop-48.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>25</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonFollowStyle</enum>
+                  </property>
+                  <property name="autoRaise">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QToolButton" name="playPause_btn">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QToolButton 
+{
+     border: 0px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: rgba(255, 255, 255, 0);
+     min-width: 30px;
+	 min-height: 30px;
+ }
+
+ QToolButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 rgba(218, 219, 222, 50), stop: 1 rgba(246, 247, 250, 50););
+ }
+
+ QToolButton:flat 
+{
+     border: none; 
+ }
+
+QToolButton:hover 
+{
+	 border: 1px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+}
+
+ QToolButton:default
+ {
+      border: 0px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+	
+	background-color: rgba(255, 255, 255, 0);
+ }</string>
+                  </property>
+                  <property name="text">
+                   <string>...</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="SoundAround.qrc">
+                    <normaloff>:/SoundAround/images/play-6-48.png</normaloff>
+                    <activeon>:/SoundAround/images/pause-48.png</activeon>:/SoundAround/images/play-6-48.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>24</width>
+                    <height>24</height>
+                   </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>false</bool>
+                  </property>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonFollowStyle</enum>
+                  </property>
+                  <property name="autoRaise">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QToolButton" name="loopBtn">
+                  <property name="minimumSize">
+                   <size>
+                    <width>26</width>
+                    <height>26</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>26</width>
+                    <height>26</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Зациклить&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">
+QToolButton:hover 
+{
+	 border: 1px outset #8f8f91;
+border-radius: 5px;
+	 border-color: rgb(0, 128, 0);
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>loop</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="SoundAround.qrc">
+                    <normaloff>:/SoundAround/images/loop-32.png</normaloff>:/SoundAround/images/loop-32.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="autoRaise">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="pauseRangeStart">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>43</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>26</height>
+                   </size>
+                  </property>
+                  <property name="palette">
+                   <palette>
+                    <active/>
+                    <inactive/>
+                    <disabled/>
+                   </palette>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Пауза перед повторным воспроизведением трека.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Начальное значение (сек.)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QSpinBox 
+{
+    border: 2px inset #909090;
+    border-radius: 3px;
+	border-width: 1px;
+	border-color: rgb(0, 128, 0);
+    padding: 1px 1px 1px 1px;
+    min-width: 3em;
+}
+</string>
+                  </property>
+                  <property name="frame">
+                   <bool>true</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="buttonSymbols">
+                   <enum>QAbstractSpinBox::UpDownArrows</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="pauseRangeEnd">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>43</width>
+                    <height>26</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>26</height>
+                   </size>
+                  </property>
+                  <property name="palette">
+                   <palette>
+                    <active/>
+                    <inactive/>
+                    <disabled/>
+                   </palette>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>9</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Пауза перед повторным воспроизведением трека.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Конечное значение (сек.)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QSpinBox 
+{
+    border: 2px inset #909090;
+    border-radius: 3px;
+	border-width: 1px;
+	border-color: rgb(0, 128, 0);
+    padding: 1px 1px 1px 1px;
+    min-width: 3em;
+}
+
+QSpinBox:hover
+{
+	border-syle: outset;
+}
+</string>
+                  </property>
+                  <property name="frame">
+                   <bool>true</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="buttonSymbols">
+                   <enum>QAbstractSpinBox::UpDownArrows</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QFrame" name="tags_frame">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QComboBox" name="tags_CBox">
+                     <property name="minimumSize">
+                      <size>
+                       <width>103</width>
+                       <height>26</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>26</height>
+                      </size>
+                     </property>
+                     <property name="palette">
+                      <palette>
+                       <active>
+                        <colorrole role="Button">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>240</red>
+                           <green>255</green>
+                           <blue>240</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                        <colorrole role="Base">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>240</red>
+                           <green>255</green>
+                           <blue>240</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                        <colorrole role="Window">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>240</red>
+                           <green>255</green>
+                           <blue>240</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                        <colorrole role="Highlight">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>169</red>
+                           <green>169</green>
+                           <blue>169</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                       </active>
+                       <inactive>
+                        <colorrole role="Button">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>240</red>
+                           <green>255</green>
+                           <blue>240</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                        <colorrole role="Base">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>240</red>
+                           <green>255</green>
+                           <blue>240</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                        <colorrole role="Window">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>240</red>
+                           <green>255</green>
+                           <blue>240</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                        <colorrole role="Highlight">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>169</red>
+                           <green>169</green>
+                           <blue>169</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                       </inactive>
+                       <disabled>
+                        <colorrole role="Button">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>240</red>
+                           <green>255</green>
+                           <blue>240</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                        <colorrole role="Base">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>240</red>
+                           <green>255</green>
+                           <blue>240</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                        <colorrole role="Window">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>240</red>
+                           <green>255</green>
+                           <blue>240</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                        <colorrole role="Highlight">
+                         <brush brushstyle="SolidPattern">
+                          <color alpha="255">
+                           <red>169</red>
+                           <green>169</green>
+                           <blue>169</blue>
+                          </color>
+                         </brush>
+                        </colorrole>
+                       </disabled>
+                      </palette>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Фильтр по тегам&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QComboBox 
+{
+    border: 2px inset #909090;
+    border-radius: 6px;
+	border-color: rgb(0, 128, 0);
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;
+	background-color: rgb(240, 255, 240);
+    selection-background-color: darkgray;
+}
+
+QComboBox:hover
+{
+	border-style: outset;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable 
+{
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+QComboBox:!editable:on, QComboBox::drop-down:editable:on 
+{
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+}
+
+QComboBox:on 
+{
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+QComboBox::drop-down 
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow 
+{
+	image: url(:/SoundAround/images/arrow-216-12.png);
+}
+
+QComboBox::down-arrow:on 
+{
+    top: 1px;
+    left: 1px;
+}</string>
+                     </property>
+                     <property name="editable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="sizeAdjustPolicy">
+                      <enum>QComboBox::AdjustToContents</enum>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDial" name="dialVolume">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>50</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="wrapping">
+           <bool>false</bool>
+          </property>
+          <property name="notchTarget">
+           <double>10.000000000000000</double>
+          </property>
+          <property name="notchesVisible">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="sliderVolume">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="singleStep">
+           <number>10</number>
+          </property>
+          <property name="pageStep">
+           <number>20</number>
+          </property>
+          <property name="value">
+           <number>50</number>
+          </property>
+          <property name="tracking">
+           <bool>true</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="tickPosition">
+           <enum>QSlider::TicksAbove</enum>
+          </property>
+          <property name="tickInterval">
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QToolButton" name="muteBtn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>26</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>26</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Отключить/включить звук&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton 
+{
+     border: 0px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: rgba(255, 255, 255, 0);
+ }
+
+ QToolButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 rgba(218, 219, 222, 50), stop: 1 rgba(246, 247, 250, 50););
+ }
+
+ QToolButton:flat 
+{
+     border: none; 
+ }
+
+QToolButton:hover 
+{
+	 border: 1px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+}
+
+ QToolButton:default
+ {
+     border-color: navy;
+	
+	background-color: rgba(255, 255, 255, 0);
+ }</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="SoundAround.qrc">
+              <normaloff>:/SoundAround/images/volume-up-4-32.png</normaloff>
+              <activeon>:/SoundAround/images/mute-2-32.png</activeon>:/SoundAround/images/volume-up-4-32.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonFollowStyle</enum>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="volumeValueLbl">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>21</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>50</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="SoundAround.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>muteBtn</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>setMuteSlot(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>448</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>15</x>
+     <y>174</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tracks_CBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>changeTrackSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>364</x>
+     <y>10</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderVolume</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>changeVolumeSlot(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>415</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>close_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>onCloseBtnSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>448</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>205</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loopBtn</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>setLoopSlot(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>94</x>
+     <y>174</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pauseRangeStart</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>changePauseRangeStartSlot(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>155</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>275</x>
+     <y>174</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>timeLine</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>changeSliderSlot(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>231</x>
+     <y>64</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>456</x>
+     <y>22</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tags_CBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>filterByTagSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>319</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>27</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>playPause_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>playPauseSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>74</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>294</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stop_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>toStartSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>37</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dialVolume</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>TrackFrame</receiver>
+   <slot>changeVolumeSlot(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>349</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>456</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>closeFrame()</signal>
+  <slot>playPauseSlot()</slot>
+  <slot>toStartSlot()</slot>
+  <slot>setMuteSlot(bool)</slot>
+  <slot>setLoopSlot(bool)</slot>
+  <slot>changeVolumeSlot(int)</slot>
+  <slot>changeSliderSlot(int)</slot>
+  <slot>changePauseRangeStartSlot(int)</slot>
+  <slot>changeTrackSlot()</slot>
+  <slot>onCloseBtnSlot()</slot>
+  <slot>filterByTagSlot()</slot>
+ </slots>
+</ui>

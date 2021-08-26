@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReferenceForm</class>
+ <widget class="QDialog" name="ReferenceForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>306</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>250</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Справка</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>4</number>
+   </property>
+   <property name="topMargin">
+    <number>4</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>4</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QListWidget" name="listWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>255</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>250</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="0">
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="0">
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>240</red>
+                <green>240</green>
+                <blue>240</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Box</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="showDropIndicator" stdset="0">
+           <bool>false</bool>
+          </property>
+          <property name="dragEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="dragDropOverwriteMode">
+           <bool>false</bool>
+          </property>
+          <property name="dragDropMode">
+           <enum>QAbstractItemView::NoDragDrop</enum>
+          </property>
+          <property name="defaultDropAction">
+           <enum>Qt::CopyAction</enum>
+          </property>
+          <property name="alternatingRowColors">
+           <bool>false</bool>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="movement">
+           <enum>QListView::Static</enum>
+          </property>
+          <property name="isWrapping" stdset="0">
+           <bool>true</bool>
+          </property>
+          <property name="resizeMode">
+           <enum>QListView::Fixed</enum>
+          </property>
+          <property name="layoutMode">
+           <enum>QListView::Batched</enum>
+          </property>
+          <property name="spacing">
+           <number>1</number>
+          </property>
+          <property name="viewMode">
+           <enum>QListView::ListMode</enum>
+          </property>
+          <property name="uniformItemSizes">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+          <property name="selectionRectVisible">
+           <bool>true</bool>
+          </property>
+          <property name="itemAlignment">
+           <set>Qt::AlignLeading</set>
+          </property>
+          <item>
+           <property name="text">
+            <string>Добавление нового трека</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="SoundAround.qrc">
+             <normaloff>:/SoundAround/images/add-new-track-16x16.png</normaloff>:/SoundAround/images/add-new-track-16x16.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Редактирование трека</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="SoundAround.qrc">
+             <normaloff>:/SoundAround/images/edit-16.png</normaloff>:/SoundAround/images/edit-16.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Удаление трека</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="SoundAround.qrc">
+             <normaloff>:/SoundAround/images/delete-16.png</normaloff>:/SoundAround/images/delete-16.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Добавление трека в список воспроизведения</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="SoundAround.qrc">
+             <normaloff>:/SoundAround/images/add-to-list-16x16.png</normaloff>:/SoundAround/images/add-to-list-16x16.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Очистка списка воспроизведения</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="SoundAround.qrc">
+             <normaloff>:/SoundAround/images/clean-16x16.png</normaloff>:/SoundAround/images/clean-16x16.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Зацикливание воспроизведения</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="SoundAround.qrc">
+             <normaloff>:/SoundAround/images/loop-16.png</normaloff>:/SoundAround/images/loop-16.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Теги                            </string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="SoundAround.qrc">
+             <normaloff>:/SoundAround/images/tag-2-16.png</normaloff>:/SoundAround/images/tag-2-16.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Настроки</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="background">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>46</red>
+              <green>91</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="icon">
+            <iconset resource="SoundAround.qrc">
+             <normaloff>:/SoundAround/images/cog-16.png</normaloff>:/SoundAround/images/cog-16.png</iconset>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>240</green>
+              <blue>240</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>-498</y>
+           <width>410</width>
+           <height>2292</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QLabel" name="addTrack_lbl">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Добавление нового трека&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Добавить новый трек можно двумя способами:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;1) Вызвать в таблице треков контекстное меню правой кнопкой мыши и выбрать &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/add-new-track-16x16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;&amp;quot;Добавить&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; ;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;2) Нажать кнопку &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/add-new-track-16x16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;&amp;quot;Добавить новый трек&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; .&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;После этого откроется диалоговое окно, в котором необходимо либо перетащить добавляемый трек в окно, либо указать путь к треку, нажав кнопку &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/addAudio16x16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt; &amp;quot;Указать путь к аудиофайлу&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; . Затем надо указать название трека, это название будет отображаться в списке добавленных треков. Если трек с таким названием уже существует, то надо придумать другое название. Программа поддерживает следующие форматы: &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;mp3, wav, ogg, ape, flac, aiff &lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;и другие.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt; color:#ff0000;&quot;&gt;Внимание! &lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Поле ввода названия трека&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt; не&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; должно быть пустым! Иначе программа не позволит добавить трек. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;При желании можно добавить неограниченное количество тегов - для этого надо выделить желаемые теги в правой колонке (для выделения нескольких тегов зажать клавишу Ctrl) и нажать соответствующую кнопку &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/arrow-99-16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;. Что бы добавить новый тег, надо нажать кнопку &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/plus-2-16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; и ввести название тега. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;После всех действий нажми кнопку &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;&amp;quot;Ок&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; и трек добавиться в список. Если в настройках включена соответствующая функция, то новый трек автоматически добавится в список воспроизведения.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="editTrack_lbl">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Редактирование трека&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Для редактирования трека надо выделить в таблице необходимый трек, вызвать контекстное меню правой кнопкой мыши и выбрать &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/edit-16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;&amp;quot;Редактировать&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;. В открывшемся диалоговом окне произвести необходимые изменения и нажать кнопку &amp;quot;Ок&amp;quot;. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; color:#ff0000;&quot;&gt;Внимание! &lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Поле ввода названия трека&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt; не&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; должно быть пустым! Иначе программа не позволит сохранить изменения.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="removeTrack_lbl">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Удаление трека&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Удалить трек можно двумя способами:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;1) Выделить в таблице нужный трек, вызвать контекстное меню правой кнопкой мыши и выбрать &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/delete-16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;&amp;quot;Удалить&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; ;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;2) Выделить в таблице нужный трек и нажать кнопку &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;d&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;elete&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;И затем подтвердить удаление. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; color:#ff0000;&quot;&gt;Внимание! &lt;/span&gt;&lt;span style=&quot; font-size:11pt; color:#000000;&quot;&gt;Если трек есть в списке воспроизведения, то его удаление невозможно. Закрой трек в списке воспроизведения и повтори процедуру удаления.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="addTrackToPlaylist_lbl">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Добавление трека в список воспроизведения&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Для того что бы добавить трек в список воспроизведения надо вызвать в таблице треков контекстное меню правой кнопкой мыши и выбрать &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/add-to-list-16x16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;&amp;quot;В список&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;, после этого в списке воспроизведения появится аудиодорожка с уже выбранным треком.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Также, можно добавить пустую аудиодорожку, нажав кнопку &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/add-to-list-16x16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt;&amp;quot;Добавить пустую аудиодорожку&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; и затем выбрать нужный трек из выпадающего меню.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="cleanPlaylist_lbl">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Очистка списка воспроизведения&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Что бы удалить &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;все&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; треки из списка воспроизведения достаточно нажать кнопку &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/clean-16x16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; &amp;quot;Очистить текущий список воспроизведения&amp;quot;. Тогда все аудиодорожки с выбранными треками будут удалены из списка воспроизведения.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="loopPlayTracks_lbl">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Зацикливание воспроизведения&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Что бы зациклить воспроизведение трека необходимо включить &lt;/span&gt;&lt;img src=&quot;:/SoundAround/images/loop-16.png&quot;/&gt;&lt;span style=&quot; font-size:11pt; font-style:italic;&quot;&gt; &amp;quot;Зациклить&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Можно задать значения паузы между повторным воспроизведением от и до в секундах. Если начальное и конечное значение паузы воспроизведения одинаковые, то пауза будет фиксированная и равная этому значению. Если ввести значения от 3 до 9, то каждый раз при повторном воспроизведении пауза будет выбрана случайным образом в диапазоне от 3 секунд до 9 секунд.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="tagsFilter_lbl">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Теги&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Для фильтрации списка треков по тегам достаточно выбрать необходимый тег в выпадающем списке, находящийся сверху таблицы треков, а в аудиодорожке - внизу под таймлайном. После выбора тега список треков в таблице или в выпадающем списке будет состоять только из тех треков, в которых добавлен выбранный тег.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="configs_lbl">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Настройки&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;Добавлять новый трек сразу в список воспроизведения:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Если эта функция включена, то после добавления нового трека, он автоматически окажется в списке воспроизведения. При выключенной функции новый трек добавляется только в таблицу треков.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;Подстраивать вертикальный размер под число аудиодорожек:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Если эта функция включена, то при добавлении аудиодорожки (пустой или с выбранным из таблицы треком) вертикальный размер окна автоматически подстраивается&lt;/span&gt;&lt;span style=&quot; font-family:'Times New Roman','serif'; font-size:11pt;&quot;/&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; под количество аудиодорожек в списке воспроизведения, даже если вертикальный размер окна был изменён пользователем. Максимальное количество аудиодорожек под который подстраивается вертикальный размер окна - 5. Если количество аудиодорожек превышает 5, то включается прокрутка колёсиком мыши.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;Вид регулятора громкости:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Можно выбрать наиболее удобный из двух регуляторов громкости. После выбора регуляторы громкости на всех добавленных в список воспроизведения аудиодорожках поменяются на выбранный и каждая добавленная аудиодорожка будет с выбранным регулятором громкости&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="Button">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="Button">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="Button">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>120</red>
+             <green>120</green>
+             <blue>120</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton 
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 lightgreen, stop: 1 green);
+    border-color: #008000;
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 10px;
+}
+
+QPushButton:flat 
+{
+    border: none; 
+}
+
+QPushButton:hover 
+{
+	  border-style: outset;
+}
+
+QPushButton:default 
+{
+    border-color: #008000;
+}
+
+QPushButton:pressed 
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #c82029, stop: 1 #f52735);
+    border-style: inset;
+}</string>
+       </property>
+       <property name="text">
+        <string>Закрыть</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="SoundAround.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ReferenceForm</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>391</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>440</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>ReferenceForm</receiver>
+   <slot>itemActivated(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>84</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>657</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>rowChangedSlot(int)</slot>
+  <slot>itemActivated(QModelIndex)</slot>
+ </slots>
+</ui>

@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AboutForm</class>
+ <widget class="QDialog" name="AboutForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>605</width>
+    <height>473</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>605</width>
+    <height>473</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>605</width>
+    <height>473</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>О программе</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_15">
+     <item>
+      <widget class="QLabel" name="headName_lbl">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>272</width>
+         <height>160</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>160</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="SoundAround.qrc">:/SoundAround/images/name.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_16">
+     <item>
+      <spacer name="horizontalSpacer_19">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="versionHead_lbl">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>15</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Версия:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="versionValue_lbl">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>15</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>2.0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_20">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="desctiption_lbl">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;SoundAround &lt;/span&gt;удобный, несложный звуковой проигрыватель, обладающий простым интерфейсом, идеально подходит для создания звуковой атмосферы и погружения в увлекательный мир D&amp;amp;D&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>13</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_19">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="info_lbl">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>По вопросам и предложениям писать на электронную почту:  </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="mail_lineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>110</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255, 0);
+border-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>elizgerd@yandex.ru</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_17">
+     <item>
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>Автор:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_18">
+       <item>
+        <widget class="QLabel" name="goose_lbl">
+         <property name="minimumSize">
+          <size>
+           <width>53</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>53</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="SoundAround.qrc">:/SoundAround/images/goose.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="dev_lbl">
+         <property name="text">
+          <string> Андрей Гулий</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_22">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="imageLogo_lbl">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="SoundAround.qrc">:/SoundAround/images/logo-512-2.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="copyright_lbl">
+         <property name="minimumSize">
+          <size>
+           <width>190</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Calibri</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copyright © 2021 Андрей Гулий Все права защищены&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>13</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_20">
+     <item>
+      <spacer name="horizontalSpacer_25">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeButton">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="palette">
+        <palette>
+         <active>
+          <colorrole role="Button">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+         </active>
+         <inactive>
+          <colorrole role="Button">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+         </inactive>
+         <disabled>
+          <colorrole role="Button">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="ButtonText">
+           <brush brushstyle="SolidPattern">
+            <color alpha="255">
+             <red>120</red>
+             <green>120</green>
+             <blue>120</blue>
+            </color>
+           </brush>
+          </colorrole>
+          <colorrole role="Base">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+          <colorrole role="Window">
+           <brush brushstyle="LinearGradientPattern">
+            <gradient startx="0.000000000000000" starty="0.000000000000000" endx="0.000000000000000" endy="1.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
+             <gradientstop position="0.000000000000000">
+              <color alpha="255">
+               <red>144</red>
+               <green>238</green>
+               <blue>144</blue>
+              </color>
+             </gradientstop>
+             <gradientstop position="1.000000000000000">
+              <color alpha="255">
+               <red>0</red>
+               <green>128</green>
+               <blue>0</blue>
+              </color>
+             </gradientstop>
+            </gradient>
+           </brush>
+          </colorrole>
+         </disabled>
+        </palette>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton 
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 lightgreen, stop: 1 green);
+    border-color: #008000;
+    border-style: inset;
+    border-width: 3px;
+    border-radius: 10px;
+}
+
+QPushButton:hover
+{
+	border-style: outset;
+}
+
+QPushButton:flat 
+{
+    border: none; 
+}
+
+QPushButton:default 
+{
+    border-color: #008000;
+}
+
+QPushButton:pressed 
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #c82029, stop: 1 #f52735);
+    border-style: inset;
+}</string>
+       </property>
+       <property name="text">
+        <string>Закрыть</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_26">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="SoundAround.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AboutForm</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>254</x>
+     <y>437</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>323</x>
+     <y>444</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
