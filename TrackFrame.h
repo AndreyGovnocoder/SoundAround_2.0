@@ -31,8 +31,8 @@ public:
 	void closeIt() { onCloseBtnSlot(); };
 	
 private:
-	Track* _track;
-	int _trackId;
+	Track* _track = nullptr;
+	int _trackId = -1;
 	bool _isPlaying = false;
 	bool _isNoProblem = true;
 	QMediaPlayer* _player;

@@ -61,6 +61,7 @@ bool SoundAround::addTrackSlot()
     }
     track.set_id(Database::getLastId(Database::TABLE_TRACKS));
     Helper::get_trackList().push_back(std::move(track));
+    Helper::sortTrackList();
     addItemToTracksTable(track, ui.tracks_table->rowCount());
 
     ui.tags_CBox->setCurrentIndex(0);

@@ -12,8 +12,8 @@ public:
     ~Helper() = default;
     static const QString ORGANIZATION_NAME;
     static const QString APPLICATION_NAME;
-    static std::vector<Track>& get_trackList();
-    static std::vector<QString>& get_tagList();
+    static std::vector<Track>& get_trackList() { return _trackList; };
+    static std::vector<QString>& get_tagList() { return _tagList; };
     static Track* findTrack(const int trackId);
     static void removeTrackFromList(const int trackId);
     static QString* findTag(const QString& tag);
@@ -23,6 +23,8 @@ public:
     static void refreshTagList();
     static const QString getFormatTime(int totalSec);
     static bool checkTagExistInTracks(const QString& checkingTag);
+    static void sortTagList();
+    static void sortTrackList();
 
 private:
 	static std::vector<Track> _trackList;

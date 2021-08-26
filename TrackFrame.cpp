@@ -1,8 +1,8 @@
 #include "TrackFrame.h"
 
 
-TrackFrame::TrackFrame(Track* track, QWidget *parent)
-	: QWidget(parent)
+TrackFrame::TrackFrame(Track* track, QWidget* parent)
+    : QWidget(parent)
     , _track(track)
     , _trackId(track->get_id())
 {
@@ -12,6 +12,7 @@ TrackFrame::TrackFrame(Track* track, QWidget *parent)
     setTracksComboBox();
     setTagsComboBox();
     set_track(track);
+    
     installEventFilter();
     _trackListByTag.reserve(Helper::get_trackList().size());
     connect(_player, &QMediaPlayer::positionChanged, this, &TrackFrame::trackPlayingSlot);
@@ -120,15 +121,15 @@ void TrackFrame::changeRemoveTrackInCB(const int trackId, bool remove)
         const int currTrackId = tracks_CBox->itemData(i).toInt();
         if (currTrackId != trackId)
             continue;
-
-        if (Track* track = Helper::findTrack(trackId))
+        Track* track = Helper::findTrack(trackId);
+        if (!track && remove)
         {
-            if (remove)
-                tracks_CBox->removeItem(i);
-            else
-                tracks_CBox->setItemText(i, track->get_baseName());
+            tracks_CBox->removeItem(i);
             return;
         }
+        
+        if (!remove)
+            tracks_CBox->setItemText(i, track->get_baseName());
     }
 }
 
