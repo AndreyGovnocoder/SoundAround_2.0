@@ -6,35 +6,57 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>408</width>
-    <height>252</height>
+    <width>425</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>373</width>
-    <height>252</height>
+    <height>300</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>16777215</width>
-    <height>252</height>
+    <height>300</height>
    </size>
+  </property>
+  <property name="font">
+   <font>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Настройки</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
+    <widget class="QCheckBox" name="copyFile_Chbox">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Копировать новый трек в папку с программой</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QCheckBox" name="addNewTrackToPlaylist_ChBox">
      <property name="font">
       <font>
        <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
-      <string>Добавлять новый трек в сразу в список воспроизведения</string>
+      <string>Добавлять новый трек сразу в список воспроизведения</string>
      </property>
      <property name="checked">
       <bool>true</bool>
@@ -46,18 +68,126 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
-      <string>Подстраивать вертикальный размер под число аудиодорожек</string>
+      <string>Подстраивать вертикальный размер под число плееров</string>
      </property>
     </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>150</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Проверка треков на наличие аудиофайлов соответсвующих этим трекам&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton 
+{
+     border: 2px inset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+QPushButton:hover 
+{
+	 border: 2px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+}
+
+ QPushButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+	border-style: inset;
+ }
+
+ QPushButton:flat 
+{
+     border: none; 
+ }
+
+ QPushButton:default
+ {
+     border-color: navy;
+ }</string>
+       </property>
+       <property name="text">
+        <string>Проверка треков</string>
+       </property>
+       <property name="icon">
+        <iconset resource="SoundAround.qrc">
+         <normaloff>:/SoundAround/images/refresh-24.png</normaloff>:/SoundAround/images/refresh-24.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="QGroupBox" name="volumeView_GBox">
      <property name="font">
       <font>
        <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="title">
@@ -72,6 +202,8 @@
         <property name="font">
          <font>
           <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
         <property name="text">
@@ -87,6 +219,8 @@
         <property name="font">
          <font>
           <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
          </font>
         </property>
         <property name="text">
@@ -499,8 +633,8 @@ QPushButton:pressed
    <slot>acceptSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>221</x>
-     <y>239</y>
+     <x>252</x>
+     <y>289</y>
     </hint>
     <hint type="destinationlabel">
      <x>292</x>
@@ -515,8 +649,8 @@ QPushButton:pressed
    <slot>changeDialViewSlot(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>105</x>
-     <y>101</y>
+     <x>172</x>
+     <y>168</y>
     </hint>
     <hint type="destinationlabel">
      <x>80</x>
@@ -531,12 +665,28 @@ QPushButton:pressed
    <slot>changeSliderViewSlot(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>245</x>
-     <y>99</y>
+     <x>335</x>
+     <y>168</y>
     </hint>
     <hint type="destinationlabel">
      <x>338</x>
      <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigsForm</receiver>
+   <slot>checkTracksOnExistanceSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>25</x>
+     <y>272</y>
     </hint>
    </hints>
   </connection>
@@ -545,5 +695,6 @@ QPushButton:pressed
   <slot>changeDialViewSlot(bool)</slot>
   <slot>changeSliderViewSlot(bool)</slot>
   <slot>acceptSlot()</slot>
+  <slot>checkTracksOnExistanceSlot()</slot>
  </slots>
 </ui>

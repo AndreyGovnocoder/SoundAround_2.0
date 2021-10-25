@@ -65,7 +65,7 @@ std::vector<Track> Database::getTrackList()
             query.value(0).toInt(),
             query.value(1).toString(),
             query.value(2).toString(),
-            QDir::currentPath() + "/sounds/" + query.value(1).toString(),
+            query.value(3).toString(),
             query.value(4).toString());
         track.set_tagList(Database::getTagsByTrack(track.get_id()));
         trackList.push_back(std::move(track));
@@ -98,23 +98,25 @@ std::vector<int> Database::getTracksByTag(const QString& tag)
 bool Database::addTrack(const Track& newTrack)
 {
     QSqlQuery query(getDatabase());
-    query.prepare("INSERT INTO " + TABLE_TRACKS + " (name, baseName, totalTime)"
-        "VALUES (:name, :baseName, :totalTime);");
+    query.prepare("INSERT INTO " + TABLE_TRACKS + " (name, baseName, path, totalTime)"
+        "VALUES (:name, :baseName, :path, :totalTime);");
     query.bindValue(":name", newTrack.get_name());
     query.bindValue(":baseName", newTrack.get_baseName());
+    query.bindValue(":path", newTrack.get_path());
     query.bindValue(":totalTime", newTrack.get_totalTime());
 
     return query.exec();
 }
 
-bool Database::editTrack(const Track* track)
+bool Database::editTrack(const Track& track)
 {
     QSqlQuery query(getDatabase());
     query.prepare("UPDATE " + TABLE_TRACKS +
-        " SET name = ?, baseName = ?" +
-        " WHERE _id=" + QString::number(track->get_id()));
-    query.addBindValue(track->get_name());
-    query.addBindValue(track->get_baseName());
+        " SET name = ?, baseName = ?, path = ?" +
+        " WHERE _id=" + QString::number(track.get_id()));
+    query.addBindValue(track.get_name());
+    query.addBindValue(track.get_baseName());
+    query.addBindValue(track.get_path());
 
     return query.exec();
 }

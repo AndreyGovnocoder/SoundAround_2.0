@@ -8,7 +8,6 @@
 #include <qrandom.h>
 #include <qpainterpath.h>
 #include "Helper.h"
-#include <QAudioOutput>
 
 class TrackFrame : public QWidget, public Ui::TrackFrame
 {
@@ -29,6 +28,9 @@ public:
 	void stop() { toStartSlot(); };
 	const bool isNoProblem() { return _isNoProblem; };
 	void closeIt() { onCloseBtnSlot(); };
+	void set_track(Track* track);
+	void setPlay();
+	void setPause();
 	
 private:
 	Track* _track = nullptr;
@@ -36,13 +38,13 @@ private:
 	bool _isPlaying = false;
 	bool _isNoProblem = true;
 	QMediaPlayer* _player;
+	QRegExpValidator* _validator = new QRegExpValidator(QRegExp("\\w*"), this);
 	std::vector<Track> _trackListByTag;
 	void setBackGrounds();
 	void setTracksComboBox();
 	void setTracksComboBox(std::vector<Track> trackList);
 	void setTagsComboBox();
 	bool eventFilter(QObject* object, QEvent* event);
-	void set_track(Track* track);
 	void setPlayPause(bool value);
 	void installEventFilter();
 
@@ -60,7 +62,9 @@ private slots:
 	void changePauseRangeStartSlot(int value) { pauseRangeEnd->setMinimum(value); };
 	void onCloseBtnSlot() { closeFrame(_trackId); };
 	void filterByTagSlot();
+	void addNewTrackSlot();
 
 signals:
 	void closeFrame(int trackId);
+	void addNewTrackSignal(TrackFrame*);
 };

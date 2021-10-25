@@ -23,6 +23,8 @@ public:
     static void refreshTagList();
     static const QString getFormatTime(int totalSec);
     static bool checkTagExistInTracks(const QString& checkingTag);
+    static bool checkTrackNameInTracks(const QString& checkingName);
+    static bool checkTagInTags(const QString& chekingTag);
     static void sortTagList();
     static void sortTrackList();
 

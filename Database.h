@@ -27,7 +27,7 @@ public:
     static std::vector<Track> getTrackList();
     static std::vector<int> getTracksByTag(const QString& tag);
     static bool addTrack(const Track& newTrack);
-    static bool editTrack(const Track* track);
+    static bool editTrack(const Track& track);
     static bool removeObject(const int id, const QString& table);
     static std::vector<QString> getTagList();
     static std::vector<QString> getTagsByTrack(const int trackId);

@@ -95,6 +95,24 @@ bool Helper::checkTagExistInTracks(const QString& checkingTag)
     return false;
 }
 
+bool Helper::checkTrackNameInTracks(const QString& checkingName)
+{
+    auto it = std::find_if(
+        _trackList.begin(), 
+        _trackList.end(), 
+        [&checkingName](const Track& track) {return track.get_baseName() == checkingName; });
+    return (it == _trackList.end()) ? false : true;
+}
+
+bool Helper::checkTagInTags(const QString& chekingTag)
+{
+    auto it = std::find_if(
+        _tagList.begin(),
+        _tagList.end(), 
+        [&chekingTag](const QString& tag) {return tag == chekingTag; });
+    return it == _tagList.end() ? false : true;
+}
+
 void Helper::sortTagList()
 {
     std::sort(

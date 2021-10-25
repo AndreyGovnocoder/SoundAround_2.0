@@ -20,4 +20,8 @@ private slots:
 	void changeDialViewSlot(bool value);
 	void changeSliderViewSlot(bool value);
 	void acceptSlot();
+	void checkTracksOnExistanceSlot();
+
+signals:
+	void checkTracksOnExistanceSignal();
 };
