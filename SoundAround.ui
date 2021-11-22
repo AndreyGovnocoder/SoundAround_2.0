@@ -461,6 +461,9 @@
   <property name="windowTitle">
    <string>SoundAround</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <property name="spacing">
@@ -503,7 +506,7 @@
       </property>
       <property name="icon">
        <iconset resource="SoundAround.qrc">
-        <normaloff>:/SoundAround/images/arrow-93-32.png</normaloff>:/SoundAround/images/arrow-93-32.png</iconset>
+        <normaloff>:/SoundAround/images/arrow-29-24.png</normaloff>:/SoundAround/images/arrow-29-24.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -821,6 +824,12 @@ QComboBox::down-arrow:on
                    </disabled>
                   </palette>
                  </property>
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
                  <property name="focusPolicy">
                   <enum>Qt::ClickFocus</enum>
                  </property>
@@ -835,6 +844,9 @@ border: 0px</string>
                   <set>QAbstractItemView::NoEditTriggers</set>
                  </property>
                  <property name="tabKeyNavigation">
+                  <bool>false</bool>
+                 </property>
+                 <property name="dragDropOverwriteMode">
                   <bool>false</bool>
                  </property>
                  <property name="alternatingRowColors">
@@ -1003,7 +1015,7 @@ border: 0px</string>
                 </size>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Добавить новый трек&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Добавить новыу треки&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton 
@@ -1080,7 +1092,7 @@ QPushButton:hover
                 </size>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Добавить пустую аудиодорожку&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Добавить пустой плеер&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton 
@@ -1221,6 +1233,114 @@ QPushButton:hover
               </spacer>
              </item>
              <item>
+              <widget class="QPushButton" name="play_btn">
+               <property name="minimumSize">
+                <size>
+                 <width>28</width>
+                 <height>28</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>28</width>
+                 <height>28</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Продолжить воспроизведение на всех плеерах&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton 
+{
+     border: 2px inset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+QPushButton:hover 
+{
+	 border-style: outset;
+}
+
+ QPushButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+	border-style: inset;
+ }
+
+ QPushButton:checked 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="SoundAround.qrc">
+                 <normaloff>:/SoundAround/images/play-6-32.png</normaloff>:/SoundAround/images/play-6-32.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pause_btn">
+               <property name="minimumSize">
+                <size>
+                 <width>28</width>
+                 <height>28</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>28</width>
+                 <height>28</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Поставить паузу на всех плеерах&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton 
+{
+     border: 2px inset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+QPushButton:hover 
+{
+	 border-style: outset;
+}
+
+ QPushButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+	border-style: inset;
+ }
+
+ QPushButton:checked 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="SoundAround.qrc">
+                 <normaloff>:/SoundAround/images/pause-32.png</normaloff>:/SoundAround/images/pause-32.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QPushButton" name="stopAll_btn">
                <property name="minimumSize">
                 <size>
@@ -1235,7 +1355,7 @@ QPushButton:hover
                 </size>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Остановить воспроизведение всех аудиодорожек&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Остановить воспроизведение всех плееров&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton 
@@ -1295,7 +1415,7 @@ QPushButton:hover
                 </size>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Отключить/включить звук на всех аудиодорожках&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Отключить/включить звук на всех плеерах&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="styleSheet">
                 <string notr="true">QToolButton 
@@ -1529,8 +1649,8 @@ QToolButton:hover
    <slot>addTrackSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>323</x>
-     <y>68</y>
+     <x>320</x>
+     <y>64</y>
     </hint>
     <hint type="destinationlabel">
      <x>381</x>
@@ -1577,8 +1697,8 @@ QToolButton:hover
    <slot>addEmptyTrackFrameSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>360</x>
-     <y>68</y>
+     <x>354</x>
+     <y>64</y>
     </hint>
     <hint type="destinationlabel">
      <x>159</x>
@@ -1593,8 +1713,8 @@ QToolButton:hover
    <slot>cleanTrackFramesListSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>397</x>
-     <y>68</y>
+     <x>388</x>
+     <y>64</y>
     </hint>
     <hint type="destinationlabel">
      <x>185</x>
@@ -1634,6 +1754,54 @@ QToolButton:hover
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>play_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>SoundAroundClass</receiver>
+   <slot>playAllSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>670</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>809</x>
+     <y>87</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pause_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>SoundAroundClass</receiver>
+   <slot>pauseAllSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>701</x>
+     <y>58</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>819</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tracks_table</sender>
+   <signal>itemDoubleClicked(QTableWidgetItem*)</signal>
+   <receiver>SoundAroundClass</receiver>
+   <slot>addTracksToPlaylistSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>257</x>
+     <y>600</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>addTrackSlot()</slot>
@@ -1652,5 +1820,8 @@ QToolButton:hover
   <slot>cleanTrackFramesListSlot()</slot>
   <slot>muteAllSlot(bool)</slot>
   <slot>stopAllSlot()</slot>
+  <slot>playAllSlot()</slot>
+  <slot>pauseAllSlot()</slot>
+  <slot>addTracksToPlaylistSlot()</slot>
  </slots>
 </ui>

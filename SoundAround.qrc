@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/SoundAround">
-        <file>C:/Users/Администратор/Downloads/Folder-Open-icon.png</file>
         <file>images/close-window-16.png</file>
         <file>images/close-window-24.png</file>
         <file>images/close-window-32.png</file>
@@ -221,5 +220,38 @@
         <file>images/logo-512-2.ico</file>
         <file>images/logo-512-2.png</file>
         <file>images/loop-16.png</file>
+        <file>images/add-folder-16.png</file>
+        <file>images/add-folder-24.png</file>
+        <file>images/add-folder-32.png</file>
+        <file>images/add-folder-48.png</file>
+        <file>images/add-folder-64.png</file>
+        <file>images/add-folder-128.png</file>
+        <file>images/add-folder-256.png</file>
+        <file>images/add-folder-512.png</file>
+        <file>images/checkmark-16.png</file>
+        <file>images/checkmark-24.png</file>
+        <file>images/checkmark-32.png</file>
+        <file>images/checkmark-48.png</file>
+        <file>images/checkmark-64.png</file>
+        <file>images/checkmark-128.png</file>
+        <file>images/checkmark-256.png</file>
+        <file>images/checkmark-512.png</file>
+        <file>images/ban-16.png</file>
+        <file>images/ban-24.png</file>
+        <file>images/ban-32.png</file>
+        <file>images/ban-48.png</file>
+        <file>images/ban-64.png</file>
+        <file>images/ban-128.png</file>
+        <file>images/ban-256.png</file>
+        <file>images/ban-512.png</file>
+        <file>images/logo_goose.png</file>
+        <file>images/refresh-16.png</file>
+        <file>images/refresh-24.png</file>
+        <file>images/refresh-32.png</file>
+        <file>images/refresh-48.png</file>
+        <file>images/refresh-64.png</file>
+        <file>images/refresh-128.png</file>
+        <file>images/refresh-256.png</file>
+        <file>images/refresh-512.png</file>
     </qresource>
 </RCC>

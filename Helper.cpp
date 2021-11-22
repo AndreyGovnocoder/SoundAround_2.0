@@ -9,24 +9,8 @@ Helper::Helper()
 {
     _trackList = Database::getTrackList();
     _tagList = Database::getTagList();
-}
-
-std::vector<Track>& Helper::get_trackList()
-{
-    std::sort(
-        _trackList.begin(),
-        _trackList.end(),
-        [](const Track& lhs, const Track& rhs) { return lhs.get_baseName() < rhs.get_baseName(); });
-    return _trackList;
-}
-
-std::vector<QString>& Helper::get_tagList()
-{
-    std::sort(
-        _tagList.begin(), 
-        _tagList.end(), 
-        [](const QString& lhs, const QString& rhs) { return lhs < rhs; });
-    return _tagList;
+    sortTrackList();
+    sortTagList();    
 }
 
 Track* Helper::findTrack(const int trackId)
@@ -82,6 +66,7 @@ bool Helper::askForAnyAction(const QString& titleText, const QString& askText)
 void Helper::refreshTagList()
 {
     _tagList = Database::getTagList();
+    sortTagList();
 }
 
 const QString Helper::getFormatTime(int totalSec)
@@ -108,4 +93,39 @@ bool Helper::checkTagExistInTracks(const QString& checkingTag)
         }
     }
     return false;
+}
+
+bool Helper::checkTrackNameInTracks(const QString& checkingName)
+{
+    auto it = std::find_if(
+        _trackList.begin(), 
+        _trackList.end(), 
+        [&checkingName](const Track& track) {return track.get_baseName() == checkingName; });
+    return (it == _trackList.end()) ? false : true;
+}
+
+bool Helper::checkTagInTags(const QString& chekingTag)
+{
+    auto it = std::find_if(
+        _tagList.begin(),
+        _tagList.end(), 
+        [&chekingTag](const QString& tag) {return tag == chekingTag; });
+    return it == _tagList.end() ? false : true;
+}
+
+void Helper::sortTagList()
+{
+    std::sort(
+        _tagList.begin(),
+        _tagList.end(),
+        [](const QString& lhs, const QString& rhs) { return lhs.toLower() < rhs.toLower(); });
+}
+
+void Helper::sortTrackList()
+{
+    std::sort(
+        _trackList.begin(),
+        _trackList.end(),
+        [](const Track& lhs, const Track& rhs)
+        { return lhs.get_baseName().toLower() < rhs.get_baseName().toLower(); });
 }

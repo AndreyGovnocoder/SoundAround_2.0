@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>476</width>
-    <height>430</height>
+    <width>373</width>
+    <height>457</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -49,6 +49,66 @@
       </property>
       <item>
        <widget class="QToolButton" name="addFile_btn">
+        <property name="minimumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Указать путь к аудиофайлу&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton 
+{
+     border: 2px inset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+QToolButton:hover 
+{
+	 border-style: outset;
+}
+
+ QToolButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+	border-style: inset;
+ }
+
+ QToolButton:checked 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="SoundAround.qrc">
+          <normaloff>:/SoundAround/images/addAudio32x32.png</normaloff>:/SoundAround/images/addAudio32x32.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="addFiles_btn">
         <property name="enabled">
          <bool>true</bool>
         </property>
@@ -68,7 +128,7 @@
          <bool>true</bool>
         </property>
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Указать путь к аудиофайлу&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Указать путь к аудиофайлам&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">QToolButton 
@@ -120,6 +180,66 @@ QToolButton:hover
        </widget>
       </item>
       <item>
+       <widget class="QToolButton" name="addFolder_btn">
+        <property name="minimumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Указать путь к папке с аудиофайлами&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton 
+{
+     border: 2px inset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+QToolButton:hover 
+{
+	 border-style: outset;
+}
+
+ QToolButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+	border-style: inset;
+ }
+
+ QToolButton:checked 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="SoundAround.qrc">
+          <normaloff>:/SoundAround/images/add-folder-32.png</normaloff>:/SoundAround/images/add-folder-32.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QLabel" name="head_lbl">
         <property name="enabled">
          <bool>true</bool>
@@ -136,7 +256,7 @@ QToolButton:hover
          <string notr="true"/>
         </property>
         <property name="text">
-         <string>Перетащи трэк  или укажи путь к трэку</string>
+         <string>Перетащи треки/папку с треками  или укажи путь к треку/папке с треками</string>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -144,7 +264,37 @@ QToolButton:hover
         <property name="alignment">
          <set>Qt::AlignCenter</set>
         </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
        </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="tracksList_frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <property name="leftMargin">
+       <number>9</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>9</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QListWidget" name="tracks_listWidget"/>
       </item>
      </layout>
     </widget>
@@ -162,13 +312,13 @@ QToolButton:hover
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
       <property name="leftMargin">
-       <number>0</number>
+       <number>9</number>
       </property>
       <property name="topMargin">
        <number>0</number>
       </property>
       <property name="rightMargin">
-       <number>0</number>
+       <number>9</number>
       </property>
       <property name="bottomMargin">
        <number>0</number>
@@ -585,6 +735,101 @@ QToolButton:hover
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
+            <widget class="QFrame" name="search_frame">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLineEdit" name="search_lineEdit"/>
+              </item>
+              <item>
+               <widget class="QToolButton" name="toolButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>24</width>
+                  <height>24</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>24</width>
+                  <height>24</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Очистить поле ввода&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QToolButton 
+{
+     border: 0px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: rgba(255, 255, 255, 0);
+     min-width: 24px;
+	 min-height: 24px;
+ }
+
+ QToolButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 rgba(218, 219, 222, 50), stop: 1 rgba(246, 247, 250, 50););
+ }
+
+ QToolButton:flat 
+{
+     border: none; 
+ }
+
+QToolButton:hover 
+{
+	 border: 1px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+}
+
+ QToolButton:default
+ {
+      border: 0px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+	
+	background-color: rgba(255, 255, 255, 0);
+ }</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="SoundAround.qrc">
+                  <normaloff>:/SoundAround/images/clean-24x24.png</normaloff>:/SoundAround/images/clean-24x24.png</iconset>
+                </property>
+                <property name="toolButtonStyle">
+                 <enum>Qt::ToolButtonFollowStyle</enum>
+                </property>
+                <property name="autoRaise">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
             <widget class="QListWidget" name="allTags_listWidget">
              <property name="enabled">
               <bool>true</bool>
@@ -643,6 +888,180 @@ QToolButton:hover
          </widget>
         </item>
        </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="acceptTrack_frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>9</number>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="acceptTrack_btn">
+        <property name="minimumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Подтвердить добавление трека&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton 
+{
+     border: 2px inset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+QPushButton:hover 
+{
+	 border: 2px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+}
+
+ QPushButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+	border-style: inset;
+ }
+
+ QPushButton:flat 
+{
+     border: none; 
+ }
+
+ QPushButton:default
+ {
+     border-color: navy;
+ }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="SoundAround.qrc">
+          <normaloff>:/SoundAround/images/checkmark-24.png</normaloff>:/SoundAround/images/checkmark-24.png</iconset>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="notAcceptTrack_btn">
+        <property name="minimumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Отменить подтверждение&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton 
+{
+     border: 2px inset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+QPushButton:hover 
+{
+	 border: 2px outset #8f8f91;
+	 border-color: rgb(0, 128, 0);
+}
+
+ QPushButton:pressed 
+{
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+	border-style: inset;
+ }
+
+ QPushButton:flat 
+{
+     border: none; 
+ }
+
+ QPushButton:default
+ {
+     border-color: navy;
+ }</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="SoundAround.qrc">
+          <normaloff>:/SoundAround/images/ban-24.png</normaloff>:/SoundAround/images/ban-24.png</iconset>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </widget>
@@ -906,7 +1325,8 @@ QPushButton:pressed
 {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 royalblue, stop: 1 dodgerblue);
     border-style: outset;
-}</string>
+}
+</string>
        </property>
        <property name="text">
         <string>Ок</string>
@@ -1198,26 +1618,27 @@ QPushButton:pressed
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>addFiles_btn</tabstop>
+  <tabstop>addFolder_btn</tabstop>
+  <tabstop>tracks_listWidget</tabstop>
+  <tabstop>name_lineEdit</tabstop>
+  <tabstop>search_lineEdit</tabstop>
+  <tabstop>toolButton</tabstop>
+  <tabstop>allTags_listWidget</tabstop>
+  <tabstop>addTagToTrack_btn</tabstop>
+  <tabstop>addTagToAllTags_btn</tabstop>
+  <tabstop>toolButton_3</tabstop>
+  <tabstop>tracksTags_listWidget</tabstop>
+  <tabstop>acceptTrack_btn</tabstop>
+  <tabstop>notAcceptTrack_btn</tabstop>
+  <tabstop>ok_btn</tabstop>
+  <tabstop>cancel_btn</tabstop>
+ </tabstops>
  <resources>
   <include location="SoundAround.qrc"/>
  </resources>
  <connections>
-  <connection>
-   <sender>addFile_btn</sender>
-   <signal>clicked()</signal>
-   <receiver>TrackDialog</receiver>
-   <slot>addFileSlot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>41</x>
-     <y>40</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>24</x>
-     <y>60</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>addTagToTrack_btn</sender>
    <signal>clicked()</signal>
@@ -1225,8 +1646,8 @@ QPushButton:pressed
    <slot>addTagToTrackSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>323</x>
-     <y>293</y>
+     <x>200</x>
+     <y>269</y>
     </hint>
     <hint type="destinationlabel">
      <x>155</x>
@@ -1241,8 +1662,8 @@ QPushButton:pressed
    <slot>addTagToBackSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>323</x>
-     <y>329</y>
+     <x>200</x>
+     <y>305</y>
     </hint>
     <hint type="destinationlabel">
      <x>256</x>
@@ -1257,8 +1678,8 @@ QPushButton:pressed
    <slot>addNewTagSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>323</x>
-     <y>365</y>
+     <x>200</x>
+     <y>341</y>
     </hint>
     <hint type="destinationlabel">
      <x>225</x>
@@ -1273,44 +1694,12 @@ QPushButton:pressed
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>607</x>
-     <y>543</y>
+     <x>362</x>
+     <y>446</y>
     </hint>
     <hint type="destinationlabel">
-     <x>529</x>
+     <x>372</x>
      <y>422</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>allTags_listWidget</sender>
-   <signal>itemClicked(QListWidgetItem*)</signal>
-   <receiver>TrackDialog</receiver>
-   <slot>allTagsItemClickedSlot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>411</x>
-     <y>218</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>527</x>
-     <y>129</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>tracksTags_listWidget</sender>
-   <signal>itemClicked(QListWidgetItem*)</signal>
-   <receiver>TrackDialog</receiver>
-   <slot>trackTagsItemClickedSlot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>94</x>
-     <y>249</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>-19</x>
-     <y>129</y>
     </hint>
    </hints>
   </connection>
@@ -1321,12 +1710,140 @@ QPushButton:pressed
    <slot>acceptSlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>78</x>
-     <y>543</y>
+     <x>88</x>
+     <y>435</y>
     </hint>
     <hint type="destinationlabel">
      <x>134</x>
      <y>415</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>TrackDialog</receiver>
+   <slot>clearSearchLineEditSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>262</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>372</x>
+     <y>101</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>search_lineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>TrackDialog</receiver>
+   <slot>searchTagSlot(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>311</x>
+     <y>261</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>372</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addFolder_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>TrackDialog</receiver>
+   <slot>addFolderSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>acceptTrack_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>TrackDialog</receiver>
+   <slot>acceptTrackSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>183</x>
+     <y>404</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>456</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>notAcceptTrack_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>TrackDialog</receiver>
+   <slot>cancelTrackSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>214</x>
+     <y>404</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>296</x>
+     <y>428</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tracks_listWidget</sender>
+   <signal>itemPressed(QListWidgetItem*)</signal>
+   <receiver>TrackDialog</receiver>
+   <slot>pressItemSlot(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>138</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>471</x>
+     <y>61</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addFiles_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>TrackDialog</receiver>
+   <slot>addFilesSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>124</x>
+     <y>-6</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addFile_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>TrackDialog</receiver>
+   <slot>addFileSlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>41</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>75</x>
+     <y>-10</y>
     </hint>
    </hints>
   </connection>
@@ -1339,5 +1856,14 @@ QPushButton:pressed
   <slot>allTagsItemClickedSlot()</slot>
   <slot>trackTagsItemClickedSlot()</slot>
   <slot>acceptSlot()</slot>
+  <slot>clearSearchLineEditSlot()</slot>
+  <slot>searchTagSlot(QString)</slot>
+  <slot>addFolderSlot()</slot>
+  <slot>selectItemSlot(QListWidgetItem*)</slot>
+  <slot>acceptTrackSlot()</slot>
+  <slot>cancelTrackSlot()</slot>
+  <slot>testSlot()</slot>
+  <slot>addFilesSlot()</slot>
+  <slot>pressItemSlot(QListWidgetItem*)</slot>
  </slots>
 </ui>

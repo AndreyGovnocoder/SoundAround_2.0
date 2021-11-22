@@ -1,8 +1,8 @@
 #include "TrackFrame.h"
 
 
-TrackFrame::TrackFrame(Track* track, QWidget *parent)
-	: QWidget(parent)
+TrackFrame::TrackFrame(Track* track, QWidget* parent)
+    : QWidget(parent)
     , _track(track)
     , _trackId(track->get_id())
 {
@@ -49,6 +49,24 @@ void TrackFrame::set_track(Track* track)
     }
 }
 
+void TrackFrame::setPlay()
+{
+    if (!_isPlaying)
+    {
+        _player->play();
+        setPlayPause(true);
+    }
+}
+
+void TrackFrame::setPause()
+{
+    if (_isPlaying)
+    {
+    _player->pause();
+    setPlayPause(false);
+    }
+}
+
 void TrackFrame::setPlayPause(bool value)
 {
     _isPlaying = value;
@@ -73,7 +91,11 @@ void TrackFrame::setTrackToPlayer()
     QFile fileTrack(_track->get_path());
     if (!fileTrack.exists())
     {
-        QString message = "Аудиофайл " + _track->get_name() + " повреждён или удалён";
+        QString message;
+        message.append(
+            "Аудиофайл ").append(
+                _track->get_name()).append(
+                    " повреждён или удалён\nВыполните проверку треков в настройках программы.");
         QMessageBox::critical(this, "Ошибка", message);
         _isNoProblem = false;
         onCloseBtnSlot();
@@ -120,15 +142,14 @@ void TrackFrame::changeRemoveTrackInCB(const int trackId, bool remove)
         const int currTrackId = tracks_CBox->itemData(i).toInt();
         if (currTrackId != trackId)
             continue;
-
         if (Track* track = Helper::findTrack(trackId))
         {
-            if (remove)
-                tracks_CBox->removeItem(i);
-            else
+            if (!remove)
                 tracks_CBox->setItemText(i, track->get_baseName());
             return;
         }
+        if (remove)
+            tracks_CBox->removeItem(i);
     }
 }
 
@@ -195,6 +216,7 @@ void TrackFrame::setTagsComboBox()
     tags_CBox->addItem("Все теги");
     for (auto& tag : Helper::get_tagList())
         tags_CBox->addItem(tag);
+    tags_CBox->setValidator(_validator);
 }
 
 bool TrackFrame::eventFilter(QObject* object, QEvent* event)
@@ -219,16 +241,8 @@ bool TrackFrame::eventFilter(QObject* object, QEvent* event)
 
 void TrackFrame::playPauseSlot()
 {
-    if (!_isPlaying)
-    {
-        _player->play();
-        setPlayPause(true);
-    }
-    else
-    {
-        _player->pause();
-        setPlayPause(false);
-    }
+    _isPlaying ? _player->pause() : _player->play();
+    setPlayPause(!_isPlaying);
 }
 
 void TrackFrame::continuePlaybackSlot()
@@ -248,20 +262,21 @@ void TrackFrame::changeTrackSlot()
         currTimeLbl->setText("0:00:00");
         return;
     }
-    _track = Helper::findTrack(tracks_CBox->currentData().toInt());
-    if (!_track)
+
+    if (_track = Helper::findTrack(tracks_CBox->currentData().toInt()))
     {
-        currTimeLbl->setText("0:00:00");
+        _trackId = _track->get_id();
+        _player->stop();
+        if (_isPlaying)
+            setPlayPause(false);
+
+        timeLine->setValue(0);
+        totalTimeLbl->setText(_track->get_totalTime());
+        setTrackToPlayer();
         return;
     }
-    _trackId = _track->get_id();
-    _player->stop();
-    if (_isPlaying)
-        setPlayPause(false);
 
-    timeLine->setValue(0);
-    totalTimeLbl->setText(_track->get_totalTime());
-    setTrackToPlayer();
+    currTimeLbl->setText("0:00:00");    
 }
 
 void TrackFrame::changeVolumeSlot(int value)
@@ -312,6 +327,10 @@ void TrackFrame::toStartSlot()
 
 void TrackFrame::setLoopSlot(bool loop)
 {
+    if (loop)
+        delay_GBox->setStyleSheet(QStringLiteral("QGroupBox{color: black;}"));
+    else
+        delay_GBox->setStyleSheet(QStringLiteral("QGroupBox{color: gray;}"));
     pauseRangeStart->setEnabled(loop);
     pauseRangeEnd->setEnabled(loop);
 }
@@ -345,4 +364,9 @@ void TrackFrame::filterByTagSlot()
     setTracksComboBox(_trackListByTag);
     if (tags_CBox->hasFocus())
         tracks_CBox->showPopup();
+}
+
+void TrackFrame::addNewTrackSlot()
+{
+    addNewTrackSignal(this);
 }

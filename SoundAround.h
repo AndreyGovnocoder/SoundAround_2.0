@@ -4,15 +4,16 @@
 #include "ui_SoundAround.h"
 #include <QtCore/qsettings.h>
 #include <QInputDialog>
+#include <QDebug>
+#include <QShortcut>
+#include <qtooltip.h>
 #include "Track.h"
 #include "TrackDialog.h"
-#include <QDebug>
 #include "TrackFrame.h"
 #include "Helper.h"
 #include "ConfigsForm.h"
 #include "AboutForm.h"
 #include "ReferenceForm.h"
-#include <QShortcut>
 
 class SoundAround : public QMainWindow
 {
@@ -23,12 +24,20 @@ public:
     static TrackFrame* findTrackFrame(const int trackId);
     static void removeTrackFrame(TrackFrame* trackFrame);
 
+protected:
+    void dragEnterEvent(QDragEnterEvent* event) override;
+    void dragMoveEvent(QDragMoveEvent* event) override;
+    void dropEvent(QDropEvent* event) override;
+    bool eventFilter(QObject* obj, QEvent* event);
+
 private:
     Ui::SoundAroundClass ui;
     QSize _mainWinSize;
     QSize _trackListSize;
     QSettings _settings;
     QShortcut* _keyDel;
+    bool _isCtrl = false;
+    bool _isShift = false;
     std::vector<Track*> _trList;
     static std::vector<TrackFrame*> _trackFramesList;
     QMediaPlayer* mediaPlayer = new QMediaPlayer(this);
@@ -69,17 +78,23 @@ private:
     void setShowHideTableBtnIcon();
     void setShowHideTableBtnIcon(bool show);
     void addTrackToPlaylist(const int trackId);
+    void addNewTrackTagsToDB(const std::vector<QString>& tagList, int trackId);
+    void keyPressEvent(QKeyEvent* event);
+    void keyReleaseEvent(QKeyEvent* event);
 
 private slots:
     bool addTrackSlot();
     void editTrackSlot();
     void removeTrackSlot();
-    void addTrackToPlaylistSlot();
-    void testSlot();
+    void removeTracksSlot();
+    void addNewTrackToTrackFrameSlot(TrackFrame* currTrackFrame);
+    void addTracksToPlaylistSlot();
     void showConfigsFormSlot();
     void showAboutFormSlot();
     void showReferenceSlot();
     void tracksTableContextMenuRequestedSlot(QPoint pos);
+    void selectItem(QTableWidgetItem* item);
+    void pressItem(QTableWidgetItem* item);
     void showHideTracksTableSlot();
     void closeTrackFrameSlot(int trackId);
     void filterByTagSlot();
@@ -87,4 +102,7 @@ private slots:
     void cleanTrackFramesListSlot();
     void muteAllSlot(bool mute);
     void stopAllSlot();
+    void playAllSlot();
+    void pauseAllSlot();
+    void checkTracksOnExistanceSlot();
 };
