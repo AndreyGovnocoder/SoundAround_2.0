@@ -1,6 +1,5 @@
 #include "TrackDialog.h"
 
-
 TrackDialog::TrackDialog(QWidget *parent)
 	: QDialog(parent)
 {
@@ -354,7 +353,7 @@ void TrackDialog::addTagToTrackSlot()
 		if (search_lineEdit->text().isEmpty())
 			return;
 		QString newTag = search_lineEdit->text().toLower();
-		if (Helper::checkTagInTags(newTag) || checkFoundTag(newTag))
+		if (Helper::findTag(newTag) || checkFoundTag(newTag))
 		{
 			QMessageBox::warning(this, "Внимание", "Такой тег уже существует");
 			search_lineEdit->setFocus();

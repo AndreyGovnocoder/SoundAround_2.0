@@ -19,9 +19,9 @@ SoundAround::SoundAround(QWidget *parent)
     connect(_keyDel, &QShortcut::activated, this, &SoundAround::removeTrackSlot);
     setupMenuBar();
     setBackgrounds();
-    setTracksTable();
-    setTagsComboBox();
     setContextMenu();
+    setTracksTable();
+    setTagsComboBox();    
     connect(_addTrackAction, &QAction::triggered, this, &SoundAround::addTrackSlot);
     connect(_editTrackAction, &QAction::triggered, this, &SoundAround::editTrackSlot);
     connect(_removeTrackAction, &QAction::triggered, this, &SoundAround::removeTracksSlot);
@@ -203,7 +203,10 @@ void SoundAround::editTrackSlot()
                 QMessageBox::critical(this, "Ошибка", message);
                 continue;
             }
-            Helper::addTagToList(tag);
+            if (Helper::findTag(tag))
+                continue;
+
+            Helper::addTagToList(tag);     
         }
     }
 }
@@ -399,11 +402,11 @@ void SoundAround::addNewTrackToTrackFrameSlot(TrackFrame* currTrackFrame)
             QMessageBox::critical(this, "Ошибка", message);
             continue;
         }
-        if (!Helper::findTag(tag))
-        {
-            Helper::addTagToList(tag);
-            addNewTagToCBoxes(tag);
-        }
+        if (Helper::findTag(tag))
+            continue;
+
+        Helper::addTagToList(tag);
+        addNewTagToCBoxes(tag);
     }
 }
 
@@ -568,16 +571,13 @@ void SoundAround::setupMenuBar()
 
 void SoundAround::setTracksTable()
 {
-    qDebug() << "in setTracksTable()";
     ui.tracks_table->setSortingEnabled(false);
     ui.tracks_table->clearContents();
     ui.tracks_table->setRowCount(0);
 
     for (const Track& track : Helper::get_trackList())
-    {
-        qDebug() << "track: " << track.get_name();
         addItemToTracksTable(track, ui.tracks_table->rowCount());
-    }
+
     ui.tracks_table->scrollToBottom();
     ui.tracks_table->hideColumn(0);
     ui.tracks_table->horizontalHeader()->setSectionResizeMode(3, QHeaderView::Stretch);
@@ -862,11 +862,10 @@ void SoundAround::addNewTrackTagsToDB(const std::vector<QString>& tagList, int t
             QMessageBox::critical(this, "Ошибка", message);
             continue;
         }
-        if (!Helper::findTag(tag))
-        {
-            Helper::addTagToList(tag);
-            addNewTagToCBoxes(tag);
-        }
+        if (Helper::findTag(tag))
+            continue;
+        Helper::addTagToList(tag);
+        addNewTagToCBoxes(tag);
     }
 }
 
@@ -918,27 +917,25 @@ void SoundAround::showReferenceSlot()
 
 void SoundAround::tracksTableContextMenuRequestedSlot(QPoint pos)
 {
-    int rowAtPos = ui.tracks_table->itemAt(pos)->row();
-    if (!ui.tracks_table->selectionModel()->isRowSelected(rowAtPos))
-        ui.tracks_table->selectRow(rowAtPos);
-    int selectedSize = ui.tracks_table->selectionModel()->selectedRows().size();
     bool editEnable = true;
-    if (selectedSize > 1)
+    bool addEnable = true;
+    bool removeEnable = true;
+
+    if (QTableWidgetItem* item = ui.tracks_table->itemAt(pos))
     {
-        
-        editEnable = false;
+        int rowAtPos = item->row();
+        if (!ui.tracks_table->selectionModel()->isRowSelected(rowAtPos))
+            ui.tracks_table->selectRow(rowAtPos);
+        if (ui.tracks_table->selectionModel()->selectedRows().size() > 1)
+            editEnable = false;
     }
-    const int currRow = ui.tracks_table->selectionModel()->currentIndex().row();
-    bool enable = true;
-    _contextMenu->popup(ui.tracks_table->viewport()->mapToGlobal(pos));
-    if (currRow < 0)
-    {
-        enable = false;
-        editEnable = false;
-    }
+    else
+        editEnable = addEnable = removeEnable = false;
+
+    _addTrackToPlaylist->setEnabled(addEnable);
     _editTrackAction->setEnabled(editEnable);
-    _removeTrackAction->setEnabled(enable);
-    _addTrackToPlaylist->setEnabled(enable);
+    _removeTrackAction->setEnabled(removeEnable);    
+    _contextMenu->popup(ui.tracks_table->viewport()->mapToGlobal(pos)); 
 }
 
 void SoundAround::selectItem(QTableWidgetItem* item)
@@ -1171,8 +1168,7 @@ void SoundAround::checkTracksOnExistanceSlot()
     else
     {
         messageText = "Следующие треки удалены, так как не найдены:";
-        for (const QString& trackName : remoteTracks)
-            messageText.append("\n").append(trackName);
+        messageText.append("\n").append(remoteTracks.join("\n"));
         Helper::refreshTagList();
         setTracksTable();
     }

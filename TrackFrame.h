@@ -1,12 +1,7 @@
 #pragma once
 
-#include <QWidget>
 #include "ui_TrackFrame.h"
-#include <qsound.h>
 #include <qmediaplayer.h>
-#include <QTimer>
-#include <qrandom.h>
-#include <qpainterpath.h>
 #include "Helper.h"
 
 class TrackFrame : public QWidget, public Ui::TrackFrame
@@ -42,7 +37,7 @@ private:
 	std::vector<Track> _trackListByTag;
 	void setBackGrounds();
 	void setTracksComboBox();
-	void setTracksComboBox(std::vector<Track> trackList);
+	void setTracksComboBox(const std::vector<Track>& trackList);
 	void setTagsComboBox();
 	bool eventFilter(QObject* object, QEvent* event);
 	void setPlayPause(bool value);

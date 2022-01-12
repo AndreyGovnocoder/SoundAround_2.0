@@ -1,8 +1,4 @@
 #include "SoundAround.h"
-#include <QtWidgets/QApplication>
-#include <qfile.h>
-#include <QtWidgets/qmessagebox.h>
-#include <QFileDialog>
 
 int main(int argc, char *argv[])
 {

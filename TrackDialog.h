@@ -1,24 +1,17 @@
 #pragma once
 
-#include <QDialog>
 #include "ui_TrackDialog.h"
 #include <QDragEnterEvent>
 #include <QDragMoveEvent>
 #include <QMimeData>
 #include <QDropEvent>
 #include <QFileDialog>
-#include <QListWidgetItem>
-#include <QStandardItem>
-#include <qsound.h>
 #include <qmediaplayer.h>
-#include <QtWidgets\qmessagebox.h>
-#include <QInputDialog>
-#include "Track.h"
-#include "Helper.h"
-#include "AskToCopyDialog.h"
-#include "TagDialog.h"
 #include <QShortcut>
 #include <QTimer>
+#include "AskToCopyDialog.h"
+#include "TagDialog.h"
+class Track;
 
 class TrackDialog : public QDialog, public Ui::TrackDialog
 {

@@ -1,6 +1,5 @@
 #include "TrackFrame.h"
 
-
 TrackFrame::TrackFrame(Track* track, QWidget* parent)
     : QWidget(parent)
     , _track(track)
@@ -204,7 +203,7 @@ void TrackFrame::setTracksComboBox()
     tracks_CBox->removeItem(0);
 }
 
-void TrackFrame::setTracksComboBox(std::vector<Track> trackList)
+void TrackFrame::setTracksComboBox(const std::vector<Track>& trackList)
 {
     tracks_CBox->clear();
     for (auto& track : trackList)
@@ -350,10 +349,7 @@ void TrackFrame::filterByTagSlot()
     {
         if (track.get_tagList().empty())
             continue;
-        auto it = std::find_if(
-            track.get_tagList().begin(), 
-            track.get_tagList().end(), 
-            [&tag](const QString& foundedTag) {return foundedTag == tag; });
+        auto it = std::find(track.get_tagList().begin(), track.get_tagList().end(), tag);
         if (it == track.get_tagList().end())
             continue;
         _trackListByTag.push_back(std::move(track));
