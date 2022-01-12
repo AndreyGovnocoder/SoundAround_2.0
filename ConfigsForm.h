@@ -1,8 +1,5 @@
 #pragma once
-
-#include <QDialog>
 #include "ui_ConfigsForm.h"
-#include <QDebug>
 #include <QtCore/qsettings.h>
 
 class ConfigsForm : public QDialog, public Ui::ConfigsForm

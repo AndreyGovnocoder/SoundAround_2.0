@@ -56,8 +56,5 @@ void ReferenceForm::itemActivated(QModelIndex item)
 	case 7:
 		configs_lbl->setVisible(true);
 		break;
-	default:
-		setVisibleLabels(false);
-		break;
 	}
 }

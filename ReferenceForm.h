@@ -1,6 +1,4 @@
 #pragma once
-
-#include <QDialog>
 #include "ui_ReferenceForm.h"
 
 class ReferenceForm : public QDialog, public Ui::ReferenceForm

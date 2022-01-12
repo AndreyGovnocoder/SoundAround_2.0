@@ -1,8 +1,7 @@
 #pragma once
 
-#include <QDialog>
 #include "ui_AboutForm.h"
-#include "Database.h"
+#include "SoundAround.h"
 
 class AboutForm : public QDialog, public Ui::AboutForm
 {

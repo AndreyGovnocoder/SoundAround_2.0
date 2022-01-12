@@ -3,7 +3,7 @@
 const QString Database::DB_NAME(QDir::currentPath() + "/db/db.db");
 const QString Database::TABLE_TRACKS("tracks");
 const QString Database::TABLE_TAGS("tags");
-const QString Database::VERSION("2.0");
+const QString Database::VERSION("2.1.1");
 
 QSqlDatabase Database::getDatabase()
 {
@@ -13,9 +13,7 @@ QSqlDatabase Database::getDatabase()
 bool Database::checkConnect()
 {
     QSqlQuery query(getDatabase());
-    query.exec("SELECT _id FROM " + TABLE_TRACKS);
-
-    return query.exec();
+    return query.exec("SELECT _id FROM " + TABLE_TRACKS);
 }
 
 bool Database::initDatabase()
@@ -36,12 +34,10 @@ int Database::getLastId(const QString& table)
     int lastId = -1;
 
     QSqlQuery query(getDatabase());
-    query.exec("SELECT _id FROM " + table + " ORDER BY _id DESC LIMIT 1");
-
-    if (query.first())
+    if (query.exec("SELECT _id FROM " + table + " ORDER BY _id DESC LIMIT 1") && query.first())
         lastId = query.value(0).toInt();
 
-    return query.exec() ? lastId : -1;
+    return lastId;
 }
 
 std::vector<Track> Database::getTrackList()
@@ -56,9 +52,7 @@ std::vector<Track> Database::getTrackList()
     if (rowCount > 0)
         trackList.reserve(++rowCount);
 
-    query.first();
-    query.previous();
-
+    query.exec("SELECT * FROM " + TABLE_TRACKS);
     while (query.next())
     {
         Track track(
@@ -86,9 +80,7 @@ std::vector<int> Database::getTracksByTag(const QString& tag)
     if (rowCount > 0)
         trackList.reserve(++rowCount);
 
-    query.first();
-    query.previous();
-
+    query.exec("SELECT idTrack FROM " + TABLE_TAGS + " WHERE tag=" + tag);
     while (query.next())
         trackList.push_back(std::move(query.value(0).toInt()));
 
@@ -140,9 +132,7 @@ std::vector<QString> Database::getTagList()
     if (rowCount > 0)
         tagList.reserve(++rowCount);
 
-    query.first();
-    query.previous();
-
+    query.exec("SELECT DISTINCT tag FROM " + TABLE_TAGS);
     while (query.next())
         tagList.push_back(std::move(query.value(0).toString()));
 
@@ -161,9 +151,7 @@ std::vector<QString> Database::getTagsByTrack(const int trackId)
     if (rowCount > 0)
         tagListByTrack.reserve(++rowCount);
 
-    query.first();
-    query.previous();
-
+    query.exec("SELECT tag FROM " + TABLE_TAGS + " WHERE idTrack=" + QString::number(trackId));
     while (query.next())
         tagListByTrack.push_back(std::move(query.value(0).toString()));
 

@@ -4,9 +4,6 @@
 #include <QFile>
 #include <QDate>
 #include <QtWidgets/qmessagebox.h>
-#include <vector>
-#include <qstring.h>
-#include "Track.h"
 #include "Helper.h"
 
 class Database

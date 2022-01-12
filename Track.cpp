@@ -1,4 +1,5 @@
 #include "Track.h"
+#include "Helper.h"
 
 Track::Track(int id, const QString& name, const QString& baseName, const QString& path, const QString& totalTime)
 	: _id(id)
@@ -20,9 +21,5 @@ Track::Track(const QString& name, const QString& baseName, const QString& path, 
 
 void Track::removeTag(const QString& tag)
 {
-	_tagList.erase(std::remove_if(
-		_tagList.begin(),
-		_tagList.end(),
-		[&tag](const QString& tagInList) {return tag == tagInList; }),
-		_tagList.end());
+	Helper::removeTag(tag, _tagList);
 }

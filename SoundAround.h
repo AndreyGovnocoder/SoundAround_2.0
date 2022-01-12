@@ -2,18 +2,14 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_SoundAround.h"
-#include <QtCore/qsettings.h>
 #include <QInputDialog>
-#include <QDebug>
-#include <QShortcut>
 #include <qtooltip.h>
-#include "Track.h"
 #include "TrackDialog.h"
 #include "TrackFrame.h"
-#include "Helper.h"
 #include "ConfigsForm.h"
 #include "AboutForm.h"
 #include "ReferenceForm.h"
+#include "Helper.h"
 
 class SoundAround : public QMainWindow
 {

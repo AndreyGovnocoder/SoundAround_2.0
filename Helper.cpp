@@ -18,7 +18,7 @@ Track* Helper::findTrack(const int trackId)
 	auto it = std::find_if(
         _trackList.begin(), 
         _trackList.end(), 
-        [&trackId](const Track& track) {return track.get_id() == trackId; });
+        [trackId](const Track& track) {return track.get_id() == trackId; });
 	return (it == _trackList.end()) ? nullptr : &(*it);
 }
 
@@ -28,24 +28,24 @@ void Helper::removeTrackFromList(const int trackId)
         _trackList.begin(),
         _trackList.end(),
         [&trackId](const Track& track) {return trackId == track.get_id(); });
-    _trackList.erase(itTrack, _trackList.end());
+    if (itTrack != _trackList.end())
+        _trackList.erase(itTrack);
 }
 
-QString* Helper::findTag(const QString& tag)
+bool Helper::findTag(const QString& tag)
 {
-    auto it = std::find_if(
-        _tagList.begin(), 
-        _tagList.end(), 
-        [&tag](const QString& foundedTag) {return foundedTag == tag; });
-    return (it == _tagList.end()) ? nullptr : &(*it);
+    auto itTag = std::find(_tagList.begin(), _tagList.end(), tag);
+    return (itTag == _tagList.end()) ? false : true;
 }
+
 void Helper::removeTag(const QString& removableTag)
 {
-    auto itTag = std::remove_if(
-        _tagList.begin(),
-        _tagList.end(),
-        [&removableTag](const QString& tag) {return removableTag == tag; });
-    _tagList.erase(itTag, _tagList.end());
+    _tagList.erase(std::remove(_tagList.begin(), _tagList.end(), removableTag));
+}
+
+void Helper::removeTag(const QString& removableTag, std::vector<QString>& tagList)
+{
+    tagList.erase(std::remove(tagList.begin(), tagList.end(), removableTag));
 }
 
 bool Helper::askForAnyAction(const QString& titleText, const QString& askText)
@@ -55,12 +55,9 @@ bool Helper::askForAnyAction(const QString& titleText, const QString& askText)
         askText,
         QMessageBox::Yes | QMessageBox::No,
         0);
-    messageBox.setButtonText(QMessageBox::Yes, "Да");
-    messageBox.setButtonText(QMessageBox::No, "Нет");
-    if (messageBox.exec() == QMessageBox::No)
-        return false;
-
-    return true;
+    messageBox.setButtonText(QMessageBox::Yes, QObject::tr("Да"));
+    messageBox.setButtonText(QMessageBox::No, QObject::tr("Нет"));
+    return messageBox.exec() == QMessageBox::No;
 }
 
 void Helper::refreshTagList()
@@ -74,12 +71,10 @@ const QString Helper::getFormatTime(int totalSec)
     int hours = totalSec / 3600;
     int min = (totalSec / 60) - (hours * 60);
     int sec = totalSec - (hours * 3600) - (min * 60);
-    hours = hours % 24;
 
     return QString::number(hours) + ":" + 
         QString::number(min / 10) + QString::number(min % 10) + ":" + 
         QString::number(sec / 10) + QString::number(sec % 10);
-
 }
 
 bool Helper::checkTagExistInTracks(const QString& checkingTag)
@@ -102,15 +97,6 @@ bool Helper::checkTrackNameInTracks(const QString& checkingName)
         _trackList.end(), 
         [&checkingName](const Track& track) {return track.get_baseName() == checkingName; });
     return (it == _trackList.end()) ? false : true;
-}
-
-bool Helper::checkTagInTags(const QString& chekingTag)
-{
-    auto it = std::find_if(
-        _tagList.begin(),
-        _tagList.end(), 
-        [&chekingTag](const QString& tag) {return tag == chekingTag; });
-    return it == _tagList.end() ? false : true;
 }
 
 void Helper::sortTagList()
