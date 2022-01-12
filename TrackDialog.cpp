@@ -83,7 +83,7 @@ void TrackDialog::dragMoveEvent(QDragMoveEvent* event)
 	{
 		QFileInfo fileInfo(event->mimeData()->urls()[0].toLocalFile());
 		QString ext = fileInfo.suffix();
-		if (ext.isEmpty() || ext == "mp3" || ext == "wav" || ext == "ogg" || ext == "ape" || ext == "flac" || ext == "aiff")
+		if (checkExtention(ext))
 			event->acceptProposedAction();
 		else
 			event->ignore();
@@ -115,7 +115,7 @@ void TrackDialog::dropEvent(QDropEvent* event)
 			if (checkFileInfo(fileInfo))
 				continue;
 			QString ext = fileInfo.suffix();
-			if (ext == "mp3" || ext == "wav" || ext == "ogg" || ext == "ape" || ext == "flac" || ext == "aiff")
+			if (checkExtention(ext))
 			{
 				_fileList.append(fileInfo);
 				_durationsList.append("");
@@ -130,7 +130,7 @@ void TrackDialog::dropEvent(QDropEvent* event)
 			if (checkFileInfo(fileInfo))
 				continue;
 			QString ext = fileInfo.suffix();
-			if (ext == "mp3" || ext == "wav" || ext == "ogg" || ext == "ape" || ext == "flac" || ext == "aiff")
+			if (checkExtention(ext))
 			{
 				_fileList.append(fileInfo);
 				_durationsList.append("");
@@ -344,6 +344,11 @@ bool TrackDialog::checkFoundTag(const QString& foundTag)
 			return true;
 	}
 	return false;
+}
+
+bool TrackDialog::checkExtention(const QString& ext)
+{
+	return (ext == "mp3" || ext == "wav" || ext == "ogg" || ext == "ape" || ext == "flac" || ext == "aiff");		
 }
 
 void TrackDialog::addTagToTrackSlot()
@@ -667,7 +672,7 @@ void TrackDialog::addFolderSlot()
 		if (ext.isEmpty() || checkFileInfo(fileInfo))
 			continue;
 		
-		if (ext == "mp3" || ext == "wav" || ext == "ogg" || ext == "ape" || ext == "flac" || ext == "aiff")
+		if (checkExtention(ext))
 		{
 			_fileList.append(fileInfo);
 			_durationsList.append("");
@@ -735,8 +740,4 @@ void TrackDialog::setDurations()
 		_timer->stop();
 		_currIndex = 0;
 	}
-}
-
-void TrackDialog::testSlot()
-{
 }

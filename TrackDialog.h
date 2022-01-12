@@ -67,6 +67,7 @@ private:
 	void cancelAcceptingItem(QListWidgetItem* item);
 	void selectFirstNotAcceptedItem();
 	bool checkFoundTag(const QString& foundedTag);
+	bool checkExtention(const QString& ext);
 	
 private slots:
 	void addFilesSlot();
@@ -86,5 +87,4 @@ private slots:
 	void keyEnterPressedSlot();
 	void durationChangedSlot();
 	void setDurations();
-	void testSlot();
 };
